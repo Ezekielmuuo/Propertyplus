@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,6 +22,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.airbnb.lottie.LottieComposition
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.propertyplus.R
 import com.example.propertyplus.navigation.ROUT_HOME
 import com.example.propertyplus.ui.theme.mybackground
@@ -48,14 +53,19 @@ fun SplashScreen(navController: NavController){
 
         }
 
+
+
         Image(
-            painter = painterResource(id = R.drawable.icon),
+            painter = painterResource(id = R.drawable.home),
             contentDescription = "home",
             modifier = Modifier
-                .size(200.dp),
-
+                .size(200.dp)
+                .clip(shape = CircleShape),
             contentScale = ContentScale.Crop
         )
+
+
+
 
     }
 
@@ -63,6 +73,7 @@ fun SplashScreen(navController: NavController){
 
 
 }
+
 
 @Composable
 @Preview(showBackground = true)
