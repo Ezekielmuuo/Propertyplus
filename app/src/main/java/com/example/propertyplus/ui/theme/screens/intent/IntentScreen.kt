@@ -123,7 +123,7 @@ fun IntentScreen(navController: NavController){
                 }
             },
             topBar = {
-                TopAppBar(title = { Text(text = "MagicBricks", fontFamily = FontFamily.Cursive, fontSize = 40.sp, color = (newPurple)) },
+                TopAppBar(title = { Text(text = "Property Plus", fontFamily = FontFamily.Cursive, fontSize = 40.sp, color = (newPurple)) },
                     colors = TopAppBarDefaults.mediumTopAppBarColors(newYellow),
 
                     )
@@ -148,13 +148,14 @@ fun IntentScreen(navController: NavController){
                         .padding(top = 80.dp, start = 20.dp),
 
                     ){
+                    Spacer(modifier = Modifier.height(20.dp))
 
                     //start of row
                     Row {
                         //card1
                         Card (modifier = Modifier
-                            .height(180.dp)
-                            .width(200.dp) ){
+                            .height(130.dp)
+                            .width(100.dp) ){
                             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
 
                                 Image(painter = painterResource(id = R.drawable.home) ,
@@ -178,7 +179,7 @@ fun IntentScreen(navController: NavController){
                         }
                         //end of card1
 
-                        Card (modifier = Modifier.padding(start = 20.dp)){
+                        Card (modifier = Modifier.padding(start = 10.dp, end = 10.dp)){
                             Text(text = "Visit Lavington", fontSize = 20.sp)
                             Text(text = "The best property you can find!")
                             Row {

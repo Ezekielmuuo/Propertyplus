@@ -32,6 +32,7 @@ import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.KeyboardType
@@ -42,6 +43,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.propertyplus.R
+import com.example.propertyplus.data.AuthViewModel
 import com.example.propertyplus.navigation.ROUT_DETAILS
 import com.example.propertyplus.navigation.ROUT_LOGIN
 import com.example.propertyplus.ui.theme.newPurple
@@ -124,7 +126,11 @@ fun SignupScreen(navController: NavController){
             visualTransformation = PasswordVisualTransformation()
         )
         Spacer(modifier = Modifier.height(30.dp))
-        Button(onClick = { },
+        val context = LocalContext.current
+        val authViewModel = AuthViewModel(navController, context)
+        Button(onClick = {
+            authViewModel.signup(name, email, password,confpassword)
+        },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp)
@@ -136,7 +142,8 @@ fun SignupScreen(navController: NavController){
 
         }
         Spacer(modifier = Modifier.height(30.dp))
-        Button(onClick = { navController.navigate(ROUT_LOGIN) },
+        Button(onClick = {
+            navController.navigate(ROUT_LOGIN) },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp)

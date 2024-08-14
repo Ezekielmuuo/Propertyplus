@@ -19,7 +19,7 @@ import com.example.propertyplus.ui.theme.screens.splash.SplashScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination:String = ROUT_HOME
+    startDestination:String = ROUT_SPLASH
 ) {
     NavHost(
         navController = navController,
