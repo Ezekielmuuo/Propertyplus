@@ -6,6 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.propertyplus.ui.theme.screens.Products.AddProductsScreen
+import com.example.propertyplus.ui.theme.screens.Products.ViewProductsScreen
 import com.example.propertyplus.ui.theme.screens.about.AboutScreen
 import com.example.propertyplus.ui.theme.screens.dashboard.DashboardScreen
 import com.example.propertyplus.ui.theme.screens.details.DetailsScreen
@@ -54,6 +56,12 @@ fun AppNavHost(
         }
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController = navController)
+        }
+        composable(ADD_PRODUCTS_URL) {
+            AddProductsScreen(navController = navController)
+        }
+        composable(VIEW_PRODUCTS_URL) {
+            ViewProductsScreen(navController = navController)
         }
 
     }
